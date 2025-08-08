@@ -1,252 +1,210 @@
-/* Example stylesheet */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
-/*
-  Common styles. These are used on every part of the Workflow/Signing process.
-*/
-
-
-/* The smaller of the titles on each Forge/webform page. This usually contains your Organization name */
-#header-title {
-  color: yellow;
-}
-
-/* The larger of the titles on each Forge/webform page. This usually contains the title of the webform itself */
-#page-title {
-  color: green;
-}
-
-/* Controls the border underneath `#page-title`. This is usually the Anvil green color. */
-#page-title::after {
-  background-color: red;
-}
-
-/* The bottom area containing the submit and save buttons on each webform */
-.button-bar {
-  border: 1px solid black;
-}
-
-/* The main submit button for the webform. Background usually the Anvil green color with text as a dark grey. */
-.button-bar .forge-submit {
-  background-color: chocolate;
-  color: black;
-}
-
-/*
-  Not an Anvil-specific selector, but for input fields, `<input-field>::placeholder` can be used
-  to select a text input's placeholder. See "Webform input examples" on what to use to select
-  form fields.
- */
-.form-group input.ant-input::placeholder {
-  color: red;
-}
-
-/*
-  Page descriptions exist on almost all pages if text is provided.
-  For webforms, it can be blank since it's optional in the webform editor.
-  There are also description elements when finishing a webform or when on the
-  signing page.
+/* 
+This is an example theme to be used in Anvil.
+You can get 80% of the way there only using the root variables. Any variables that are commented out are supported in Anvil, but not used in this example.
+For more granular control, you can use the anvil-* classes to target specific elements. Some are used here or commented out for reference.
+For a complete list of supported variables and classes, see the white labeling documentation: https://useanvil.com/docs/api/white-labeling/
  */
 
-/*
-  Selects all page descriptions -- will affect webforms, signing descriptions
-  and confirm webform data pages.
-*/
-.page-description {
-  border: 1px solid black;
+:root {
+  /******** root colors - sets defaults for everything else that are overrideable ********/
+  --root-black-color: #222;
+  --root-white-color: #fff;
+  --root-background: var(--root-white-color);
+  --root-text-color: var(--root-black-color);
+  --root-brand-color: #6002ee;
+  --root-brand-color-10: #b794f6;
+  --root-brand-color-20: #efe5fd;
+  --root-green-color: #2ed27c;
+  --root-green-color-10: rgba(46, 210, 124, 0.4);
+  --root-error-color: #e55252;
+  --root-link-color: #0185a2;
+  --root-link-hover-color: #00a298;
+
+  /******** root typography ********/
+  --root-font-family: "Roboto", sans-serif;
+  --root-font-weight: 300;
+  /* --root-title-display: none; */
+
+  /******** backgrounds ********/
+  /* --webform-background: <color-value>; */
+  /* --esign-background: <color-value>; */
+
+  /******** webform titles ********/
+  --webform-title-font-weight: 500;
+  --webform-title-font-style: normal;
+  --webform-title-font-size: 32px;
+  --webform-page-title-font-weight: 300;
+  --webform-page-title-font-style: normal;
+  --webform-page-title-font-size: 28px;
+
+  /* --webform-title-color: <color-value>; */
+  /* --webform-page-title-underline-color: <color value>; */
+  /* --webform-page-title-underline-display: none; */
+  /* --webform-page-title-color: <color-value>; */
+
+  /******** button ********/
+  --button-border-radius: 8px;
+  --button-disabled-background: #f5f5f5;
+  --button-disabled-color: #d9d9d9;
+
+  /* --button-disabled-icon-color: <color-value>; */
+  /* --button-background: <color value>; */
+  /* --button-color: <color-value>; */
+  /* --button-hover-color: <color-value>; */
+  /* --button-hover-background: <color-value>; */
+  /* --button-focus-color: <color-value>; */
+  /* --button-focus-background: <color-value>; */
+
+  /******** circle icons ********/
+  /* --circle-icon-background: <color-value>; */
+  /* --circle-icon-color: <color-value; */
+  /* --circle-icon-button-background: <color-value>; */
+
+  /******** fields ********/
+  --field-label-font-weight: 300;
+  --field-error-box-shadow: none;
+  --field-error-background: transparent;
+
+  /* --field-error-label-background: transparent; */
+  /* --field-error-text-color: <color-value>; */
+  /* --field-label-color: <color-value>; */
+
+  /******** field inputs ********/
+  --field-input-background-color: transparent;
+  --field-input-border: none;
+  --field-input-border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  --field-input-focus-box-shadow: none;
+  --field-input-padding-x: 0;
+  /* --field-input-hover-border-color: <color value>; */
+  /* --field-input-focus-border-color: <color value>; *
+  /* padding-y is not supported right now - use selectors to target elements you want for padding top/bottom */
+
+  /******** dropdown ********/
+  --dropdown-menu-font-weight: 300;
+  --dropdown-menu-style: normal;
+  --dropdown-placeholder-font-style: italic;
+  --dropdown-placeholder-font-weight: 400;
+
+  /* --dropdown-option-active-background-color: <color-value>; */
+  /* --dropdown-menu-background-color: <color-value>; */
+  /* --dropdown-menu-color: <color-value>; */
+  /* --dropdown-placeholder-background-color: <color-value>; */
+  /* --dropdown-placeholder-color: <color-value>; */
+  /* --dropdown-placeholder-active-color: <color-value>; */
+
+  /******** date picker ********/
+  --date-picker-border: none;
+  --date-picker-today-border-radius: 0;
+  --date-picker-footer-button-font-style: italic;
+  --date-picker-footer-button-font-weight: 500;
+  --date-picker-days-of-week-font-style: italic;
+  --date-picker-days-of-week-font-weight: 600;
+
+  /* --date-picker-footer-button-color: <color-value>; */
+  /* --date-picker-footer-button-hover-color: <color-value>; */
+  /* --date-picker-background: <color-value>; */
+  /* --date-picker-color: <color-value>; */
+  /* --date-picker-hover-background: <color-value>; */
+  /* --date-picker-today-hover-background: <color-value>; */
+  /* --date-picker-today-hover-color: <color-value>; */
+  /* --date-picker-controls-color: <color-value>; */
+  /* --date-picker-controls-hover-color: <color-value>; */
+
+  /******** dropzone ********/
+  /* --dropzone-border: 2px dashed <color-value>; */
+  /* --dropzone-active-border: 2px dashed <color-value>; */
+  /* --dropzone-accept-border: 2px dashed <color-value>; */
+  /* --dropzone-accept-background: <color-value>; */
+  /* --dropzone-reject-border: 2px dashed <color-value>; */
+  /* --dropzone-error-text-color: <color-value>; */
+
+  /******** dropzone supported selectors ********/
+  /* there are more, but these are only on certain drag and drop states */
+  /* they are here for easier reference. you can target anything within the dropzone for these states using these classes */
+  /* - `.anvil-dropzone-drop-active` */
+  /* - `.anvil-dropzone-drop-accept` */
+  /* - `.anvil-dropzone-drop-reject` */
+  /* - `.anvil-dropzone-drop-disabled` */
+
+  /******** loading spinner ********/
+  /* --loading-spinner-color: <color-value>; */
+  --loading-spinner-size: 24px;
+  --loading-spinner-thickness: 2px;
+
+  /******** checkboxes ********/
+  /* --checkbox-checked-background: <color-value>; */
+  /* --checkbox-checked-border-color: <color-value>; */
+  /* --checkbox-check-hover-border-color: <color-value>; */
+
+  /* --checkbox-checked-border: 1px solid var(--root-primary-color); */
+  /* --checkbox-border-radius: 50%; */
+
+  /******** radio buttons ********/
+  /* --radio-buttons-selected-background: <color-value>; */
+  /* --radio-buttons-selected-color: <color-value>; */
+  /* --radio-buttons-unselected-background-color: <color-value>; */
+  /* --radio-buttons-unselected-color: <color-value>; */
+
+  /******** content card ********/
+  --content-card-background: transparent;
+  --content-card-box-shadow: none;
+  --content-card-padding: 0;
+  --content-card-margin-bottom: 40px;
+  --content-title-font-size: 20px;
+  --content-title-font-weight: 500;
+
+  /*************************************/
+  /******** webform review page ********/
+  /*************************************/
+
+  /******** review data card ********/
+  --review-data-card-empty-value-required-border-left: none;
+  --review-data-card-empty-value-required-border-bottom: 2px solid
+    var(--root-error-color);
+  --review-data-card-empty-value-font-style: italic;
+
+  /* --review-data-card-value-empty-required-hover-color: <color-value>; */
+  /* --review-data-card-value-label-color: <color-value>; */
+  /* --review-data-card-value-label-hover-color: <color-value>; */
+  /* --review-data-card-item-edit-link-color: <color-value>; */
+  /* --review-data-card-empty-value-required-border-color: <color-value>; */
+  /* --review-data-card-edit-button-color: <color-value>; */
+  /* --review-data-card-edit-button-hover-color: <color-value>; */
 }
 
-/* Descriptions on each webform page */
-.forge-page-description {}
-/*
-  Descriptions on each webform finish page -- this page is where a user
-  confirms their data.
-*/
-.forge-finish-page-description {}
-/* Descriptions on the signing page */
-.etch-page-description {}
-
-
-/*
-  Webform styles. These are styles specifically on the webform pages.
-*/
-
-/* This is the submit button when the user confirms all their webform data -- the finish page */
-.button-bar #finish-btn {
-  background-color: darksalmon;
-  color: black;
+.anvil-markdown strong {
+  font-weight: 500;
+  font-style: normal;
 }
 
-/*
-  This is the submit button after a user submits their webform, but before a user signs.
-  The user will click this button to go to the signing page.
-*/
-.button-bar #review-and-sign-btn {
-  background-color: aqua;
-  color: black;
+.anvil-markdown ul {
+  list-style-type: square;
 }
 
-
-/**
-  Webform input examples
- */
-
-
-/**
-  In general, form items are in the form of `.label-<the-field's-label>` with spaces and special characters
-  replaced with `-`. So a field with the label "Full Name" will have the class `.label-full-name`.
-
-  Note that this also means that if your webform gets updated and its label is changed, your CSS must also change.
-*/
-
-/**
-  Common selector for all form groups. Form groups are elements that contain
-  both the label and the input field.
- */
-.form-group {}
-.form-group label {}
-.form-group input {}
-
-/*
-  Field descriptions. These are optional text descriptions that show under a
-  field's label. By default they're a light grey color.
- */
-.form-group .form-item-description {}
-
-/**
-  Any field feedback can be selected with `.form-item-help`. This class is
-  commonly used when there's a required field.
- */
-.form-group .form-item-help {}
-
-
-/**
-  You can narrow down your selection even further by using the field's type.
-  Examples below. In general, they will be all "form-group-<type>" with the
-  <type> in all lowercase, and spaces removed.
- */
-/** Basic text inputs */
-.form-group-shorttext {}
-.form-group-email {}
-.form-group-phone {}
-.form-group-ssn {}
-.form-group-dollar {}
-
-/** Full name field and its subfields */
-.form-group-fullname {}
-.form-group-fullname .first-name {}
-.form-group-fullname .middle-name {}
-.form-group-fullname .last-name {}
-
-/** Date picker field */
-.form-group-date {}
-/** The actual date picker input */
-.form-group-date .ant-picker {}
-
-/** US Address and its subfields */
-.form-group-usaddress {}
-.form-group-usaddress .street-address {}
-.form-group-usaddress .city {}
-.form-group-usaddress .state {}
-.form-group-usaddress .zip {}
-
-/** Date dropdowns. This field has dropdowns for month, day and year */
-.form-group-dateselect {}
-.form-group-dateselect .month {}
-.form-group-dateselect .day {}
-.form-group-dateselect .year {}
-
-/** Dropdown fields */
-.form-group-select {}
-/** The actual dropdown input */
-.form-group-select .ant-select {}
-
-.form-group-agentselector {}
-
-
-/**
-  Signature Page Styles
- */
-
-/* Controls all signing messages */
-.workflow-message {}
-
-/* Controls warning signing messages. You may see a warning message when you're logged in as an admin */
-.workflow-message-warning {}
-.workflow-message-error {}
-.workflow-message-info {}
-
-/* Groups the entire list of steps for creating a signature */
-.signature-actions-list {}
-.signature-action-draw-signature {}
-.signature-action-item-container {}
-
-/*
-  Class for each of the number step of the signing process.
-  This groups `.action-item-title` and `.action-item-description` classes
- */
-.signature-action-item {}
-
-/* Title within an action item */
-.action-item-title {
-  color: #999;
+.anvil-markdown ol {
+  list-style-type: decimal;
 }
 
-/* Description within an action item */
-.action-item-description {
-  color: #999;
+.anvil-field-content-container {
+  display: flex;
+  flex-direction: column;
 }
 
-
-/*
-  Groups the "Draw your signature" step.
-  Numbered step, title, description, signature pad and accept signature button.
- */
-.signature-action-draw-signature {}
-
-/* "I accept my signature" button after drawing your signature */
-#signature-accept-btn {}
-
-/* This controls the color of the accept signature button when it's disabled -- before a user creates a signature */
-#signature-accept-btn[disabled] {
-  background-color: red;
+/* we use ant-form-item-has-error to target only error fields. will change to anvil-field-has-error in the future */
+.ant-form-item-has-error
+  .anvil-field-content-container
+  .anvil-field-help-label {
+  order: 2;
+  position: relative;
+  margin-top: 6px;
+  text-align: left;
+  padding-left: 0;
+  padding-right: 0;
 }
 
-/* Drawing area for signature */
-#signature-pad {
-  border: 1px solid blue;
-}
-
-/* Signature area after user accepts their signature */
-#signature-display {
-  background: lightblue;
-}
-
-
-/*
-  Groups the "sign all documents" step.
-  Numbered step, title, description, checkbox and text
- */
-.signature-action-review {
-  background: lightcyan;
-}
-
-
-/* Container that contains the "Start signing" and "Sign all" buttons */
-.signature-accept-actions {}
-
-/* The "Start signing" button */
-#signature-next-btn {}
-
-/* Contains all the PDFs visible to the user */
-.signature-accept-file-list {}
-
-
-/**
-  Download files page styles
- */
-
-/* When the user is done with the entire workflow (webforms and signing). This is the "Download" button. */
-#download-file-btn {
-  background-color: darkblue;
-  color: white;
+.anvil-list-input-item .anvil-field-label {
+  font-size: 14px;
+  font-style: italic;
 }
