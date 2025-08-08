@@ -16,7 +16,7 @@ For a complete list of supported variables and classes, see the white labeling d
   --root-brand-color: #6002ee;
   --root-brand-color-10: #b794f6;
   --root-brand-color-20: #efe5fd;
-  --root-green-color: ##FF934A;
+  --root-green-color: #FF934A;
   --root-green-color-10: rgba(46, 210, 124, 0.4);
   --root-error-color: #e55252;
   --root-link-color: #0185a2;
@@ -50,7 +50,7 @@ For a complete list of supported variables and classes, see the white labeling d
   --button-disabled-color: #d9d9d9;
 
   /* --button-disabled-icon-color: <color-value>; */
-  /* --button-background: <color value>; */
+  --button-background: #FF934A;
   /* --button-color: <color-value>; */
   /* --button-hover-color: <color-value>; */
   /* --button-hover-background: <color-value>; */
