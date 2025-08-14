@@ -25,7 +25,7 @@ For a complete list of supported variables and classes, see the white labeling d
   /******** root typography ********/
   --root-font-family: ‘Figtree’, sans-serif;
   --root-font-weight: 400;
-  --root-title-display: none;
+  /* --root-title-display: none ; */
 
 
   /******** backgrounds ********/
@@ -79,7 +79,7 @@ For a complete list of supported variables and classes, see the white labeling d
   --field-input-background-color: var(--root-white-color);
   --field-input-border: #D1C7C3;
   --field-input-hover-border-color: var(root-link-hover-color);
-  --field-input-focus-background: F8F5FC;
+  --field-input-focus-background: #F8F5FC;
   --field-input-focus-border-color: #B78CDD;
   --field-input-border-radius: 4px;
 
