@@ -13,9 +13,9 @@ For a complete list of supported variables and classes, see the white labeling d
   --root-white-color: #fff;
   --root-background: var(--root-white-color);
   --root-text-color: var(--root-black-color);
-  --root-brand-color: #6002ee;
-  --root-brand-color-10: #b794f6;
-  --root-brand-color-20: #efe5fd;
+  --root-brand-color: #ff934a;
+  --root-brand-color-10: #ff934a;
+  --root-brand-color-20: #ff934a;
   --root-green-color: #ff934a;
   --root-green-color-10: rgba(46, 210, 124, 0.4);
   --root-error-color: #e55252;
