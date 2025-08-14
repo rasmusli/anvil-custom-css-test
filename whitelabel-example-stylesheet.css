@@ -246,6 +246,26 @@ For a complete list of supported variables and classes, see the white labeling d
   fill: var(--field-input-focus-border-color, #B78CDD) !important;
 }
 
+/* Short text field background + border */
+#shortText > rect {
+  fill: var(--field-input-background-color, #fff) !important;
+  stroke: var(--field-input-border, #D1C7C3) !important;
+  stroke-width: 1.5;
+  rx: var(--field-input-border-radius, 4px);
+}
+
+/* Hover */
+#shortText:hover > rect {
+  stroke: var(--field-input-hover-border-color, #8c8c8c) !important;
+}
+
+/* Focus/highlight */
+#shortText.is-highlighted > rect,
+#shortText:focus-within > rect {
+  fill: var(--field-input-focus-background, #F8F5FC) !important;
+  stroke: var(--field-input-focus-border-color, #B78CDD) !important;
+}
+
 /* we use ant-form-item-has-error to target only error fields. will change to anvil-field-has-error in the future */
 .ant-form-item-has-error
   .anvil-field-content-container
