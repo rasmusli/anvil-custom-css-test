@@ -11,7 +11,7 @@ For a complete list of supported variables and classes, see the white labeling d
   /******** root colors ********/
   --root-black-color: #000;
   --root-white-color: #fff;
-  --root-background: #F5F0ED;
+  --root-background: var(--root-white-color);
   --root-text-color: var(--root-black-color);
   --root-brand-color: #FFA64D;
   --root-brand-color-10: #DBC5EE;
