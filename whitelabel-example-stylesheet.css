@@ -29,7 +29,7 @@ For a complete list of supported variables and classes, see the white labeling d
 
   /******** backgrounds ********/
   /* --webform-background: <color-value>; */
-  /* --esign-background: <color-value>; */
+  --esign-background: none; */
 
   /******** webform titles ********/
   --webform-title-font-weight: 500;
