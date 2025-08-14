@@ -29,7 +29,7 @@ For a complete list of supported variables and classes, see the white labeling d
 
   /******** backgrounds ********/
   /* --webform-background: <color-value>; */
-  --esign-background: none; */
+  /* --esign-background: none; */
 
   /******** webform titles ********/
   --webform-title-font-weight: 500;
@@ -50,7 +50,7 @@ For a complete list of supported variables and classes, see the white labeling d
   --button-disabled-color: #d9d9d9;
 
   /* --button-disabled-icon-color: <color-value>; */
-  --button-background: #ff934a;
+  /* --button-background: #ff934a; */
   /* --button-color: <color-value>; */
   /* --button-hover-color: <color-value>; */
   /* --button-hover-background: <color-value>; */
