@@ -8,24 +8,25 @@ For a complete list of supported variables and classes, see the white labeling d
  */
 
 :root {
-  /******** root colors - sets defaults for everything else that are overrideable ********/
-  --root-black-color: #222;
+  /******** root colors ********/
+  --root-black-color: #000;
   --root-white-color: #fff;
-  --root-background: var(--root-white-color);
+  --root-background: #FF934A;
   --root-text-color: var(--root-black-color);
-  --root-brand-color: #ff934a;
-  --root-brand-color-10: #ff934a;
-  --root-brand-color-20: #ff934a;
-  --root-green-color: #ff934a;
-  --root-green-color-10: rgba(46, 210, 124, 0.4);
-  --root-error-color: #e55252;
-  --root-link-color: #0185a2;
-  --root-link-hover-color: #00a298;
-
+  --root-brand-color: ##FFA64D;
+  --root-brand-color-10: #DBC5EE;
+  --root-brand-color-20: #F5EFFB;
+  --root-green-color: #6D9F5B;
+  --root-green-color-10: rgba(109, 159, 91, 0.4);
+  --root-error-color: #FF3B20;
+  --root-link-color: var(--root-black-color);
+  --root-link-hover-color: #CDB0ED;
+  --root-disabled-color: #E7DCD7;
   /******** root typography ********/
-  --root-font-family: "Roboto", sans-serif;
-  --root-font-weight: 200;
+  --root-font-family: ‘Figtree’, sans-serif;
+  --root-font-weight: 400;
   --root-title-display: none;
+
 
   /******** backgrounds ********/
   /* --webform-background: <color-value>; */
@@ -45,9 +46,12 @@ For a complete list of supported variables and classes, see the white labeling d
   /* --webform-page-title-color: <color-value>; */
 
   /******** button ********/
-  --button-border-radius: 8px;
-  --button-disabled-background: #f5f5f5;
-  --button-disabled-color: #d9d9d9;
+  --button-background: #F5F0ED;
+  --button-border-radius: 99px;
+  --button-border: 1px solid #FF934A;
+  --button-disabled-background: var(--root-disabled-color);
+  --button-disabled-border-color: var(--root-disabled-color);
+  --button-disabled-color: #918985;
 
   /* --button-disabled-icon-color: <color-value>; */
   /* --button-background: #ff934a; */
@@ -62,8 +66,8 @@ For a complete list of supported variables and classes, see the white labeling d
   /* --circle-icon-color: <color-value; */
   /* --circle-icon-button-background: <color-value>; */
 
-  /******** fields ********/
-  --field-label-font-weight: 300;
+/******** fields ********/
+  --field-label-font-weight: 400;
   --field-error-box-shadow: none;
   --field-error-background: transparent;
 
@@ -72,11 +76,13 @@ For a complete list of supported variables and classes, see the white labeling d
   /* --field-label-color: <color-value>; */
 
   /******** field inputs ********/
-  --field-input-background-color: transparent;
-  --field-input-border: none;
-  --field-input-border-bottom: 2px solid rgba(0, 0, 0, 0.1);
-  --field-input-focus-box-shadow: none;
-  --field-input-padding-x: 0;
+  --field-input-background-color: var(--root-white-color);
+  --field-input-border: #D1C7C3;
+  --field-input-hover-border-color: var(root-link-hover-color);
+  --field-input-focus-background: F8F5FC;
+  --field-input-focus-border-color: #B78CDD;
+  --field-input-border-radius: 4px;
+
   /* --field-input-hover-border-color: <color value>; */
   /* --field-input-focus-border-color: <color value>; *
   /* padding-y is not supported right now - use selectors to target elements you want for padding top/bottom */
