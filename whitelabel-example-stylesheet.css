@@ -46,7 +46,7 @@ For a complete list of supported variables and classes, see the white labeling d
   /* --webform-page-title-color: <color-value>; */
 
   /******** button ********/
-  --button-background: #F5F0ED;
+  --button-background: #FFA64D;
   --button-border-radius: 99px;
   --button-border: 1px solid #FF934A;
   --button-disabled-background: var(--root-disabled-color);
