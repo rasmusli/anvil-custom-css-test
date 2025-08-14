@@ -224,6 +224,24 @@ For a complete list of supported variables and classes, see the white labeling d
   rx: var(--field-input-border-radius, 4px);
 }
 
+.anvil-pdf-signature-accept-field .rh rect {
+  fill: none !important;
+  stroke: var(--field-input-border, #D1C7C3) !important;
+  stroke-width: 1.5;
+  rx: var(--field-input-border-radius, 4px);
+}
+
+/* On hover */
+.anvil-pdf-signature-accept-field:hover .rh rect {
+  stroke: var(--field-input-hover-border-color, #8c8c8c) !important;
+}
+
+/* On focus/highlight */
+.anvil-pdf-signature-accept-field.is-highlighted .rh rect,
+.anvil-pdf-signature-accept-field:focus-within .rh rect {
+  stroke: var(--field-input-focus-border-color, #B78CDD) !important;
+}
+
 /* we use ant-form-item-has-error to target only error fields. will change to anvil-field-has-error in the future */
 .ant-form-item-has-error
   .anvil-field-content-container
