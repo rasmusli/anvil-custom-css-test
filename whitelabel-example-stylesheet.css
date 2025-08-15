@@ -247,8 +247,20 @@ For a complete list of supported variables and classes, see the white labeling d
   fill: #000 !important;
 }
 
-/* Signature icon recolor (optional) */
-.signature-accept-content .anvil-icon-signature path {
+/* Signature icon */
+/* Default (idle) — grey like the default border */
+.signature-accept-content .anvil-pdf-signature-accept-field .anvil-icon-signature path {
+  fill: var(--field-input-border, #D1C7C3) !important;
+}
+
+/* Hover — match hover border */
+.signature-accept-content .anvil-pdf-signature-accept-field:hover .anvil-icon-signature path {
+  fill: var(--field-input-hover-border-color, #8c8c8c) !important;
+}
+
+/* Focus/active — purple like the focus ring */
+.signature-accept-content .anvil-pdf-signature-accept-field.is-highlighted .anvil-icon-signature path,
+.signature-accept-content .anvil-pdf-signature-accept-field:focus-within .anvil-icon-signature path {
   fill: var(--field-input-focus-border-color, #B78CDD) !important;
 }
 
