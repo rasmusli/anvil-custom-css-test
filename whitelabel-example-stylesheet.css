@@ -198,99 +198,58 @@ For a complete list of supported variables and classes, see the white labeling d
   flex-direction: column;
 }
 
-/* Signature field background and border */
-.anvil-pdf-signature-accept-field > rect {
-  fill: var(--field-input-background-color, #fff) !important;
-  stroke: var(--field-input-border, #D1C7C3) !important;
-  stroke-width: 1.5;
-  rx: var(--field-input-border-radius, 4px); /* rounded corners */
-}
-
-/* On hover: match field hover border */
-.anvil-pdf-signature-accept-field:hover > rect {
-  stroke: var(--field-input-hover-border-color, #8c8c8c) !important;
-}
-
-/* On focus/highlight: match field focus styles */
-.anvil-pdf-signature-accept-field.is-highlighted > rect,
-.anvil-pdf-signature-accept-field:focus-within > rect {
-  fill: var(--field-input-focus-background, #F8F5FC) !important;
-  stroke: var(--field-input-focus-border-color, #B78CDD) !important;
-}
-
-/* Optional: match the “ring” outline too */
-.anvil-pdf-signature-accept-field .rh rect {
-  stroke: var(--field-input-border, #D1C7C3) !important;
-  rx: var(--field-input-border-radius, 4px);
-}
-
-.anvil-pdf-signature-accept-field .rh rect {
-  fill: none !important;
-  stroke: var(--field-input-border, #D1C7C3) !important;
-  stroke-width: 1.5;
-  rx: var(--field-input-border-radius, 4px);
-}
-
-/* On hover */
-.anvil-pdf-signature-accept-field:hover .rh rect {
-  stroke: var(--field-input-hover-border-color, #8c8c8c) !important;
-}
-
-/* On focus/highlight */
-.anvil-pdf-signature-accept-field.is-highlighted .rh rect,
-.anvil-pdf-signature-accept-field:focus-within .rh rect {
-  stroke: var(--field-input-focus-border-color, #B78CDD) !important;
-}
-
-.anvil-icon-signature path {
-  fill: var(--field-input-focus-border-color, #B78CDD) !important;
-}
-
-/* Short text field background + border */
-#shortText > rect {
-  fill: var(--field-input-background-color, #fff) !important;
-  stroke: var(--field-input-border, #D1C7C3) !important;
-  stroke-width: 1.5;
-  rx: var(--field-input-border-radius, 4px);
-}
-
-/* Hover */
-#shortText:hover > rect {
-  stroke: var(--field-input-hover-border-color, #8c8c8c) !important;
-}
-
-/* Focus/highlight */
-#shortText.is-highlighted > rect,
-#shortText:focus-within > rect {
-  fill: var(--field-input-focus-background, #F8F5FC) !important;
-  stroke: var(--field-input-focus-border-color, #B78CDD) !important;
-}
-
-.anvil-pdf-signature-accept-field .rh rect,
-g#shortText .rh rect {
-  fill: none !important;
+/* Scope to the signature area only */
+.signature-accept-content rect {
   stroke: var(--field-input-border, #D1C7C3) !important;
   stroke-width: 1.5 !important;
   rx: var(--field-input-border-radius, 4px);
 }
 
-/* Hover ring */
-.anvil-pdf-signature-accept-field:hover .rh rect,
-g#shortText:hover .rh rect {
+/* Background rects */
+.signature-accept-content rect:not([fill="none"]) {
+  fill: var(--field-input-background-color, #fff) !important;
+}
+
+/* Overlay ring rects */
+.signature-accept-content rect[fill="none"] {
+  fill: none !important;
+}
+
+/* Hover */
+.signature-accept-content g:hover rect {
   stroke: var(--field-input-hover-border-color, #8c8c8c) !important;
 }
 
-.anvil-pdf-signature-accept-field rect[fill="none"],
-g#shortText rect[fill="none"] {
+/* Focus / active states */
+.signature-accept-content g.is-highlighted rect,
+.signature-accept-content g.is-selected rect {
+  stroke: var(--field-input-focus-border-color, #B78CDD) !important;
+}
+.signature-accept-content g.is-highlighted rect:not([fill="none"]),
+.signature-accept-content g.is-selected rect:not([fill="none"]) {
+  fill: var(--field-input-focus-background, #F8F5FC) !important;
+}
+
+/* Kill Anvil's green strokes explicitly */
+.signature-accept-content rect[stroke="#16ca6d"],
+.signature-accept-content rect[stroke="#4ceb98"] {
+  stroke: var(--field-input-border, #D1C7C3) !important;
+}
+.signature-accept-content g.is-highlighted rect[stroke="#16ca6d"],
+.signature-accept-content g.is-selected rect[stroke="#16ca6d"],
+.signature-accept-content g.is-highlighted rect[stroke="#4ceb98"],
+.signature-accept-content g.is-selected rect[stroke="#4ceb98"] {
   stroke: var(--field-input-focus-border-color, #B78CDD) !important;
 }
 
-g#shortText text {
+/* All text inside fields → black */
+.signature-accept-content g text {
   fill: #000 !important;
 }
 
-fullName text {
-  fill: #000 !important;
+/* Signature icon recolor (optional) */
+.signature-accept-content .anvil-icon-signature path {
+  fill: var(--field-input-focus-border-color, #B78CDD) !important;
 }
 
 /* we use ant-form-item-has-error to target only error fields. will change to anvil-field-has-error in the future */
