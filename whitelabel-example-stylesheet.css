@@ -25,7 +25,7 @@ For a complete list of supported variables and classes, see the white labeling d
   /******** root typography ********/
   --root-font-family: ‘Figtree’, sans-serif;
   --root-font-weight: 400;
-  /* --root-title-display: none ; */
+  --root-title-display: none ;
 
 
   /******** backgrounds ********/
